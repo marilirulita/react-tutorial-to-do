@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import { v4 as uuidv4 } from "uuid";
 import Header from "./Header";
 import TodosList from "./TodosList";
@@ -43,23 +43,19 @@ const TodoContainer = () => {
          return todo
      }))
    }
-  
-  // const componentDidMount() {
-  //   const temp = localStorage.getItem("todos")
-  //   const loadedTodos = JSON.parse(temp)
-  //   if (loadedTodos) {
-  //     setState({
-  //       todos: loadedTodos
-  //     })
-  //   }
-  // }
 
-  // componentDidUpdate(prevProps, prevState) {
-  //   if(prevState.todos !== state.todos) {
-  //     const temp = JSON.stringify(state.todos)
-  //     localStorage.setItem("todos", temp)
-  //   }
-  // }
+  useEffect(() => {
+    const temp = localStorage.getItem("todos")
+    const loadedTodos = JSON.parse(temp)
+    if (loadedTodos) {
+    addTodos(loadedTodos)
+    }
+  }, [addTodos])
+
+  useEffect(() => {
+    const temp = JSON.stringify(todos)
+    localStorage.setItem("todos", temp)
+  }, [todos])
 
     return (
       <div className="container">
