@@ -8,7 +8,7 @@ class TodoContainer extends React.Component {
       {
         id: 1,
         title: "Setup development environment",
-        completed: true
+        completed: false
       },
       {
         id: 2,
@@ -23,7 +23,7 @@ class TodoContainer extends React.Component {
     ]
    };
 
-   handleChange = (id) => {
+   handleChange = id => {
     this.setState(prevState => ({
       todos: prevState.todos.map(todo => {
         if (todo.id === id){
@@ -37,11 +37,19 @@ class TodoContainer extends React.Component {
     }))
    }
 
+   handleDelete = id => {
+     this.setState({
+       todos: [
+         ...this.state.todos.filter(todo => todo.id !== id)
+       ] 
+     })
+   }
+
   render() {
     return (
       <div>
         <Header />
-        <TodosList todos={this.state.todos} handleChangeProps={this.handleChange} />
+        <TodosList todos={this.state.todos} handleChangeProps={this.handleChange} handleDeleteProps={this.handleDelete} />
       </div>
     )
   }
