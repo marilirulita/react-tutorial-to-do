@@ -48,7 +48,7 @@ class TodoContainer extends React.Component {
 
    addNewItem = title => {
      const newItem = {
-      id: 4,
+      id: this.state.todos.length + 1,
       title: title,
       completed: false
      }
