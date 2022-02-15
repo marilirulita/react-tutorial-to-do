@@ -7,7 +7,7 @@ class TodosList extends React.Component {
     return (
       <ul>
         {this.props.todos.map(elem => (
-          <TodoItem key={elem.id} todo={elem} />
+          <TodoItem key={elem.id} todo={elem} handleChangeProps={this.props.handleChangeProps} />
         ))}
       </ul>
     )      
