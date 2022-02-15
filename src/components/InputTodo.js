@@ -13,7 +13,7 @@ class InputTodo extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    if (this.state.title !== "") {
+    if (this.state.title.trim()) {
       this.props.handleSubmitProps(this.state.title);
     this.setState({
       title: ""
