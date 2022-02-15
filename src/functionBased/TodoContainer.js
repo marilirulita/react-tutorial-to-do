@@ -5,7 +5,12 @@ import TodosList from "./TodosList";
 import InputTodo from "./InputTodo";
 
 const TodoContainer = () => {
-  const [todos, addTodos] = useState([]);
+  const getInitialTodos = () => {
+    const temp = localStorage.getItem("todos")
+    const savedTodos = JSON.parse(temp)
+    return savedTodos || []
+  }
+  const [todos, addTodos] = useState(getInitialTodos());
 
    const handleChange = id => {
     addTodos(prevState => 
@@ -43,14 +48,6 @@ const TodoContainer = () => {
          return todo
      }))
    }
-
-  useEffect(() => {
-    const temp = localStorage.getItem("todos")
-    const loadedTodos = JSON.parse(temp)
-    if (loadedTodos) {
-    addTodos(loadedTodos)
-    }
-  }, [addTodos])
 
   useEffect(() => {
     const temp = JSON.stringify(todos)
