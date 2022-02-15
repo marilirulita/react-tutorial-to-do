@@ -9,7 +9,7 @@ const InputTodo = (props) => {
   const handleSubmit = e => {
     e.preventDefault();
     if (title.trim()) {
-      props.handleSubmitProps(title);
+      props.handleSubmit(title);
     setTitle("")
     }
     else {
