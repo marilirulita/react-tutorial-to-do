@@ -1,10 +1,34 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import Link from '../Link.react';
+import Header from '../functionBased/Header';
+import InputTodo from '../functionBased/InputTodo';
+import TodoContainer from '../functionBased/TodoContainer';
+//import TodoItem from '../functionBased/TodoItem';
 
 it('renders correctly', () => {
   const tree = renderer
-    .create(<Link page="http://www.facebook.com">Facebook</Link>)
+    .create(<Header></Header>)
     .toJSON();
   expect(tree).toMatchSnapshot();
 });
+
+it('renders correctly', () => {
+  const tree = renderer
+    .create(<TodoContainer></TodoContainer>)
+    .toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+it('renders correctly', () => {
+  const tree = renderer
+    .create(<InputTodo></InputTodo>)
+    .toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+// it('renders correctly', () => {
+//   const tree = renderer
+//     .create(<TodoItem></TodoItem>)
+//     .toJSON();
+//   expect(tree).toMatchSnapshot();
+// });
