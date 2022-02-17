@@ -1,12 +1,13 @@
 import React from 'react'
-import { Link, useRouteMatch, Route } from "react-router-dom"
-import SinglePage from './SinglePage'
+//import { Link, useRouteMatch, Route } from "react-router-dom"
+//import { Link, Route } from "react-router-dom"
+//import SinglePage from './SinglePage'
 
 const About = () => {
  // const { url, path } = useRouteMatch
   return (
     <div className="about__content">
-      <ul className="about__list">
+      {/* <ul className="about__list">
         <li>
          // <Link to={`${url}/about-app`}>About App</Link>
         </li>
@@ -16,7 +17,7 @@ const About = () => {
       </ul>
       <Route path={`${path}/:slug`}>
         <SinglePage />
-      </Route>
+      </Route> */}
     </div>
   )
 }
