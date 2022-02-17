@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { FaTrash } from "react-icons/fa"
 import styles from "./TodoItem.module.css";
 
 const TodoItem = (props) => {
@@ -46,7 +47,7 @@ const TodoItem = (props) => {
           checked={completed}
           onChange={() => props.handleChange(id)}
         />
-        <button onClick={() => props.handleDelete(id)}>Delete</button>
+        <button onClick={() => props.handleDelete(id)}><FaTrash style={{ color: "orangered", fontSize: "16px" }} /></button>
         <span style={completed ? completedStyle : null}>{title}</span>
       </div>
       <input
