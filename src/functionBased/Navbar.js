@@ -51,7 +51,6 @@ const Navbar = () => {
               <Link 
                 to={link.path} 
                 onClick={() => closeMenu()}
-                exact="true"
               >
                 {link.text}
               </Link>
