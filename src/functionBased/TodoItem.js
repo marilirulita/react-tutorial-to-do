@@ -1,30 +1,23 @@
-import React from "react";
+import React, {useState} from "react";
 import styles from "./TodoItem.module.css";
 
-class TodoItem extends React.Component {
-  state = {
-    editing: false,
+const TodoItem = props => {
+  const [editing, setupEditing] = useState(false);
+
+  const handleDoubleClick = () => {
+    setupEditing(true);
   };
 
-  handleDoubleClick = () => {
-    this.setState({
-      editing: true,
-    });
-  };
-
-  handleEnterKey = (e) => {
+  const handleEnterKey = (e) => {
     if (e.key === "Enter") {
-      this.setState({
-        editing: false,
-      });
+      setupEditing(false);
     }
   };
 
-  componentWillUnmount() {
-    console.log("Cleaning up...");
-  }
+  // componentWillUnmount() {
+  //   console.log("Cleaning up...");
+  // }
 
-  render() {
     const completedStyle = {
       fontStyle: "italic",
       color: "#595959",
@@ -34,24 +27,24 @@ class TodoItem extends React.Component {
 
     let editMode = {};
     let viewMode = {};
-    if (this.state.editing) {
+    if (editing) {
       viewMode.display = "none";
     } else {
       editMode.display = "none";
     }
 
-    const { id, title, completed } = this.props.todo;
+    const { id, title, completed } = props.todo;
 
     return (
       <li className={styles.item}>
-        <div onDoubleClick={this.handleDoubleClick} style={viewMode}>
+        <div onDoubleClick={handleDoubleClick} style={viewMode}>
           <input
             type="checkbox"
             className={styles.checkbox}
             checked={completed}
-            onChange={() => this.props.handleChange(id)}
+            onChange={() => props.handleChange(id)}
           />
-          <button onClick={() => this.props.handleDelete(id)}>Delete</button>
+          <button onClick={() => props.handleDelete(id)}>Delete</button>
           <span style={completed ? completedStyle : null}>{title}</span>
         </div>
         <input
@@ -60,13 +53,12 @@ class TodoItem extends React.Component {
           style={editMode}
           value={title}
           onChange={(e) => {
-            this.props.handleEdit(e.target.value, id);
+            props.handleEdit(e.target.value, id);
           }}
-          onKeyDown={this.handleEnterKey}
+          onKeyDown={handleEnterKey}
         />
       </li>
     );
   }
-}
 
 export default TodoItem;
