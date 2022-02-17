@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-//import { Route, Switch } from "react-router-dom";
 import { Routes, Route } from "react-router-dom";
 
 import { v4 as uuidv4 } from "uuid";
@@ -64,7 +63,6 @@ const TodoContainer = () => {
   return (
     <>
       <Navbar />
-      {/* <Switch> */}
       <Routes>
         <Route exact path="/">
           <div className="container">
@@ -80,14 +78,9 @@ const TodoContainer = () => {
             </div>
           </div>
         </Route>
-        <Route path="/about">
-          <About />
-        </Route>
-        <Route path="*">
-          <NotMatch />
-         </Route>
-         </Routes>
-       {/* </Switch> */}
+        <Route path="/about" element={<About />} />
+        <Route path="*" element={<NotMatch />} />
+      </Routes>
     </>
   );
 };
