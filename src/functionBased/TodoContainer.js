@@ -4,8 +4,6 @@ import Header from "./Header";
 import TodosList from "./TodosList";
 import InputTodo from "./InputTodo";
 import Navbar from "./Navbar";
-//import About from "./pages/About"
-//import NotMatch from "./pages/NotMatch"
 
 const TodoContainer = () => {
   const getInitialTodos = () => {
@@ -61,10 +59,6 @@ const TodoContainer = () => {
   return (
     <>
     <Navbar />
-    {/* <Switch> */}
-    {/* <Router>
-    <Route path="/"> */}
-      
       <div className="container">
         <div className="inner">
           <Header />
@@ -77,15 +71,6 @@ const TodoContainer = () => {
           />
         </div>
       </div>
-      {/* </Route>
-      </Router> */}
-      {/* <Route path="/about">
-      <About />
-    </Route>
-    <Route path="*">
-      <NotMatch />
-    </Route> */}
-    {/* </Switch> */}
     </>
   );
 };
