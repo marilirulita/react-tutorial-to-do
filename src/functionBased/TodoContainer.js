@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
-
 import { v4 as uuidv4 } from "uuid";
 import Header from "./Header";
 import TodosList from "./TodosList";
 import InputTodo from "./InputTodo";
 import Navbar from "./Navbar";
+//import About from "./pages/About"
+//import NotMatch from "./pages/NotMatch"
 
 const TodoContainer = () => {
   const getInitialTodos = () => {
@@ -59,7 +60,11 @@ const TodoContainer = () => {
 
   return (
     <>
-      <Navbar />
+    <Navbar />
+    {/* <Switch> */}
+    {/* <Router>
+    <Route path="/"> */}
+      
       <div className="container">
         <div className="inner">
           <Header />
@@ -72,6 +77,15 @@ const TodoContainer = () => {
           />
         </div>
       </div>
+      {/* </Route>
+      </Router> */}
+      {/* <Route path="/about">
+      <About />
+    </Route>
+    <Route path="*">
+      <NotMatch />
+    </Route> */}
+    {/* </Switch> */}
     </>
   );
 };
