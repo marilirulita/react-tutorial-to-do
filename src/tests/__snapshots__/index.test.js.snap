@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<header
+  style={
+    Object {
+      "lineHeight": "1.5em",
+      "padding": "20px 0",
+    }
+  }
+>
+  <h1
+    style={
+      Object {
+        "color": "#ececec",
+        "fontSize": "6rem",
+        "fontWeight": "600",
+        "lineHeight": "1em",
+        "marginBottom": "2rem",
+        "textAlign": "center",
+        "textTransform": "lowercase",
+      }
+    }
+  >
+    todos
+  </h1>
+</header>
+`;
+
+exports[`renders correctly 2`] = `
+<header
+  style={
+    Object {
+      "lineHeight": "1.5em",
+      "padding": "20px 0",
+    }
+  }
+>
+  <h1
+    style={
+      Object {
+        "color": "#ececec",
+        "fontSize": "6rem",
+        "fontWeight": "600",
+        "lineHeight": "1em",
+        "marginBottom": "2rem",
+        "textAlign": "center",
+        "textTransform": "lowercase",
+      }
+    }
+  >
+    todos
+  </h1>
+</header>
+`;
+
+exports[`renders correctly 3`] = `
+<form
+  className="form-container"
+  onSubmit={[Function]}
+>
+  <input
+    className="input-text"
+    name="title"
+    onChange={[Function]}
+    placeholder="Add Todo..."
+    type="text"
+    value=""
+  />
+  <button
+    className="input-submit"
+  >
+    Submit
+  </button>
+</form>
+`;
