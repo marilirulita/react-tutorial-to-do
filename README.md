@@ -6,7 +6,7 @@
 
 ## Live Demo
 
-[Live Demo Link](https://marilirulita.github.io/react-tutorial-to-do/)
+[Heroku Link](https://react-tutorial-todo.herokuapp.com/)
 
 ## Built With
 
