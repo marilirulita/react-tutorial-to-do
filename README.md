@@ -4,6 +4,8 @@
 
 > To-Do App developed following the tutorial: React Tutorial From Scratch: A Step-by-Step Guide (2021).
 
+![](Screenshot_2.png)
+
 ## Live Demo
 
 [Heroku Link](https://react-tutorial-todo.herokuapp.com/)
